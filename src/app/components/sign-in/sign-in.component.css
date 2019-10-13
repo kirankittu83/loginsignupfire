@@ -1,6 +1,15 @@
-#signinPage {
-}
+
   .loginsub {
     font-size: 12px;
     padding-left: 54px;
+  }
+  .phonenumberText{
+    margin-bottom: 0px;
+  }
+  #recaptcha-container{
+    margin: 10px 0px;
+  }
+  .inputPhoneNumber{
+    border: none;
+    border-bottom: 1px solid #ccc;
   }

@@ -40,13 +40,12 @@
         </button>
       </div>
       <div class="formGroup" [hidden]="user">
-      <h1>Sign In with Your Phone Number</h1>
-      <label for="phone">Phone Number</label><br>
-
-      <input type="text" formControlName="userPhonenumber" class="input" placeholder="+918341160484"  maxlength="13">
+      <h3>Sign In with Your Phone Number</h3>
+      <label class="phonenumberText" for="phone">Phone Number</label>
+      <input type="text" formControlName="userPhonenumber" class="inputPhoneNumber" placeholder="+918341160484"  maxlength="13"><br>
       <div id="recaptcha-container"></div>
 
-      <button (click)="sendLoginCode()">SMS Text Login Code</button>
+      <button class="btn btn-primary btn-rounded greyBtn" (click)="sendLoginCode()">SMS Text Login Code</button>
 
       <div *ngIf="windowRef.confirmationResult">
         <hr>
@@ -72,7 +71,8 @@
     </div>
 
     <div class="redirectToLogin">
-      <span>Don't have an account?<span class="redirect" routerLink="/register-user"> Sign Up</span></span>
+      <span>Don't have an account?<span class="redirect" routerLink="/register-user"> Sign Up</span></span><br>
+      <span>copyright @kirankittu </span>
     </div>
   </div>
 </div>

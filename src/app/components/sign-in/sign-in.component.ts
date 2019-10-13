@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from "../../shared/services/auth.service";
 import { FormControl, FormGroup, FormBuilder, Validators } from "@angular/forms";
 import * as firebase from 'firebase';
+import { Router } from "@angular/router";
 
 // export class PhoneNumber {
 //   country: string;
@@ -34,7 +35,8 @@ export class SignInComponent implements OnInit {
 
   constructor(
     private signInformBuilder: FormBuilder,
-    public authService: AuthService
+    public authService: AuthService,
+    public router: Router
   ) { }
 
   ngOnInit() {
@@ -92,7 +94,8 @@ export class SignInComponent implements OnInit {
     this.windowRef.confirmationResult
     .confirm(this.verificationCode)
     .then( result => {
-      this.user = result.user;
+      this.router.navigate(['/dashboard']);
+      // this.user = result.user;
     })
     .catch(error => console.log(error, 'Incorrect code entered'));
   }
