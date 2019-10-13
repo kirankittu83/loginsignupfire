@@ -6,20 +6,28 @@
         <img src="https://www.positronx.io/wp-content/themes/positronx/img/logo-positronx-white.svg" alt="positronX.io - Learn Full Stack Development">
       </a>
     </div> -->
+    <form [formGroup]="signupformgroup" novalidate>
 
     <div class="authBlock">
       <h3>Sign Up</h3>
-
       <div class="formGroup">
-        <input type="email" class="formControl" placeholder="Email Address" #userEmail required>
+          <input type="email" class="formControl" formControlName="signupfirstname" placeholder="First Name" #userFirstName required>
+                  <!-- <pre>Dirty? {{ dirty }}</pre> -->
+      </div>
+      <div class="formGroup">
+          <input type="email" class="formControl" formControlName="signuplastname" placeholder="LastName" #userLastName required>
       </div>
 
       <div class="formGroup">
-        <input type="password" class="formControl" placeholder="Password" #userPwd required>
+        <input type="email" class="formControl" formControlName="signupemail" placeholder="Email Address" #userEmail required>
       </div>
 
       <div class="formGroup">
-        <input type="button" class="btn btnPrimary" value="Sign Up" (click)="authService.SignUp(userEmail.value, userPwd.value)">
+        <input type="password" class="formControl" formControlName="signuppassword" placeholder="Password" #userPwd required>
+      </div>
+
+      <div class="formGroup">
+        <input type="button" class="btn btnPrimary" value="Sign Up" (click)="SignUp()">
       </div>
 
       <div class="formGroup">
@@ -39,6 +47,7 @@
     <div class="redirectToLogin">
       <span>Already have an account? <span class="redirect" routerLink="/sign-in">Log In</span></span>
     </div>
+    </form>
   </div>
 
 </div>
